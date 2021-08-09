@@ -242,10 +242,13 @@ mark {
 
 .bg-color {
     background-image: linear-gradient(to right, #4cbf30 0%, #0f9d58 100%);
+    /*background:#000B3F;*/
+    /*background:#FF00FF;*/
+    /*background:linear-gradient(right, #00dbde, #fc00ff, #00dbde, #fc00ff);*/
 }
 
 .text-color {
-    color: #0f9d58 !important;
+    color: 	#000000 !important;
 }
 
 .white-color {
@@ -554,7 +557,7 @@ header .go-back i {
     -webkit-animation: rainbow 60s infinite;
     animation: rainbow 60s infinite;
 }
-
+/*蒙版特效*/
 .bg-cover:before,
 .bg-cover:after {
     position: absolute;
