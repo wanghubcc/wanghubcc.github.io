@@ -554,12 +554,12 @@ header .go-back i {
 .post-cover {
     height: 40vh !important;
 }
-
+/*滤镜颜色*/
 .bg-cover:after {
-    -webkit-animation: rainbow 60s infinite;
-    animation: rainbow 60s infinite;
+    -webkit-animation: rainbow 30s infinite;
+    animation: rainbow 30s infinite;
 }
-/*蒙版特效*/
+
 .bg-cover:before,
 .bg-cover:after {
     position: absolute;
