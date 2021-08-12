@@ -2,11 +2,11 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>莫问天涯の笔记</title>
   
-  <subtitle>夏天工地的砖头比键盘更烫手</subtitle>
+  <subtitle>莫问天涯の笔记</subtitle>
   <link href="https://wanghubcc.github.io/atom.xml" rel="self"/>
   
   <link href="https://wanghubcc.github.io/"/>
-  <updated>2021-08-05T15:23:19.528Z</updated>
+  <updated>2021-08-12T15:50:26.114Z</updated>
   <id>https://wanghubcc.github.io/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://wanghubcc.github.io/2021/08/05/myblog-test/"/>
     <id>https://wanghubcc.github.io/2021/08/05/myblog-test/</id>
     <published>2021-08-05T15:23:19.000Z</published>
-    <updated>2021-08-05T15:23:19.528Z</updated>
+    <updated>2021-08-12T15:50:26.114Z</updated>
     
     
     
