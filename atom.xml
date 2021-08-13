@@ -6,7 +6,7 @@
   <link href="https://wanghubcc.github.io/atom.xml" rel="self"/>
   
   <link href="https://wanghubcc.github.io/"/>
-  <updated>2021-08-13T04:58:36.701Z</updated>
+  <updated>2021-08-13T09:00:59.254Z</updated>
   <id>https://wanghubcc.github.io/</id>
   
   <author>
@@ -17,23 +17,32 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>Hello World</title>
-    <link href="https://wanghubcc.github.io/archives/4a17b156.html"/>
-    <id>https://wanghubcc.github.io/archives/4a17b156.html</id>
-    <published>2021-08-04T16:08:32.040Z</published>
-    <updated>2021-08-13T04:58:36.701Z</updated>
+    <title>使用chromedriver打印日志</title>
+    <link href="https://wanghubcc.github.io/archives/dc2645ea.html"/>
+    <id>https://wanghubcc.github.io/archives/dc2645ea.html</id>
+    <published>2021-08-13T08:36:00.000Z</published>
+    <updated>2021-08-13T09:00:59.254Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot;&gt;documentation&lt;/a&gt;</summary>
+    <summary type="html">&lt;p&gt;使用chromedriver进行网页抓取时同时打印日志，并获取响应状态码&lt;/p&gt;
+&lt;pre class=&quot;line-numbers language-java&quot; data-language=&quot;java&quot;&gt;&lt;code class=&quot;language-java&quot;&gt;&lt;span</summary>
         
       
     
     
     
+    
+    <category term="chromedriver" scheme="https://wanghubcc.github.io/tags/chromedriver/"/>
+    
+    <category term="笔记" scheme="https://wanghubcc.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
+    
+    <category term="爬虫" scheme="https://wanghubcc.github.io/tags/%E7%88%AC%E8%99%AB/"/>
+    
+    <category term="信息采集" scheme="https://wanghubcc.github.io/tags/%E4%BF%A1%E6%81%AF%E9%87%87%E9%9B%86/"/>
     
   </entry>
   
