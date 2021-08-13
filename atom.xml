@@ -3,11 +3,11 @@
   <title>莫问天涯の笔记</title>
   
   <subtitle>莫问天涯の笔记</subtitle>
-  <link href="https://wanghubcc.github.io/atom.xml" rel="self"/>
+  <link href="https://blog.wanghub.cc/atom.xml" rel="self"/>
   
-  <link href="https://wanghubcc.github.io/"/>
+  <link href="https://blog.wanghub.cc/"/>
   <updated>2021-08-13T09:28:59.933Z</updated>
-  <id>https://wanghubcc.github.io/</id>
+  <id>https://blog.wanghub.cc/</id>
   
   <author>
     <name>莫问天涯</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>推送博客时出现错误解决方案</title>
-    <link href="https://wanghubcc.github.io/archives/7a191711.html"/>
-    <id>https://wanghubcc.github.io/archives/7a191711.html</id>
+    <link href="https://blog.wanghub.cc/archives/7a191711.html"/>
+    <id>https://blog.wanghub.cc/archives/7a191711.html</id>
     <published>2021-08-13T09:20:47.000Z</published>
     <updated>2021-08-13T09:28:59.933Z</updated>
     
@@ -35,16 +35,16 @@
     
     
     
-    <category term="笔记" scheme="https://wanghubcc.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
+    <category term="笔记" scheme="https://blog.wanghub.cc/tags/%E7%AC%94%E8%AE%B0/"/>
     
-    <category term="错误" scheme="https://wanghubcc.github.io/tags/%E9%94%99%E8%AF%AF/"/>
+    <category term="错误" scheme="https://blog.wanghub.cc/tags/%E9%94%99%E8%AF%AF/"/>
     
   </entry>
   
   <entry>
     <title>使用chromedriver打印日志</title>
-    <link href="https://wanghubcc.github.io/archives/dc2645ea.html"/>
-    <id>https://wanghubcc.github.io/archives/dc2645ea.html</id>
+    <link href="https://blog.wanghub.cc/archives/dc2645ea.html"/>
+    <id>https://blog.wanghub.cc/archives/dc2645ea.html</id>
     <published>2021-08-13T08:36:00.000Z</published>
     <updated>2021-08-13T09:16:24.354Z</updated>
     
@@ -61,13 +61,13 @@
     
     
     
-    <category term="笔记" scheme="https://wanghubcc.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
+    <category term="笔记" scheme="https://blog.wanghub.cc/tags/%E7%AC%94%E8%AE%B0/"/>
     
-    <category term="chromedriver" scheme="https://wanghubcc.github.io/tags/chromedriver/"/>
+    <category term="chromedriver" scheme="https://blog.wanghub.cc/tags/chromedriver/"/>
     
-    <category term="爬虫" scheme="https://wanghubcc.github.io/tags/%E7%88%AC%E8%99%AB/"/>
+    <category term="爬虫" scheme="https://blog.wanghub.cc/tags/%E7%88%AC%E8%99%AB/"/>
     
-    <category term="信息采集" scheme="https://wanghubcc.github.io/tags/%E4%BF%A1%E6%81%AF%E9%87%87%E9%9B%86/"/>
+    <category term="信息采集" scheme="https://blog.wanghub.cc/tags/%E4%BF%A1%E6%81%AF%E9%87%87%E9%9B%86/"/>
     
   </entry>
   
