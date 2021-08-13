@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="爬虫,chromedriver">
+    <meta name="keywords" content="推送博客时出现错误解决方案, Java、Python">
     <meta name="description" content="年轻时的一腔热血，最终都会被生活磨平棱角，归于平凡">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>使用chromedriver打印日志 | 莫问天涯の笔记</title>
+    <title>推送博客时出现错误解决方案 | 莫问天涯の笔记</title>
 <!--    <link rel="icon" type="image/png" href="/favicon.png">-->
     <link rel="icon" type="image/png" href="">
 
@@ -323,12 +323,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/14.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/16.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">使用chromedriver打印日志</h1>
+                    <h1 class="description center-align post-title">推送博客时出现错误解决方案</h1>
                 </div>
             </div>
         </div>
@@ -448,16 +448,8 @@
                                 <span class="chip bg-color">笔记</span>
                             </a>
                         
-                            <a href="/tags/chromedriver/">
-                                <span class="chip bg-color">chromedriver</span>
-                            </a>
-                        
-                            <a href="/tags/%E7%88%AC%E8%99%AB/">
-                                <span class="chip bg-color">爬虫</span>
-                            </a>
-                        
-                            <a href="/tags/%E4%BF%A1%E6%81%AF%E9%87%87%E9%9B%86/">
-                                <span class="chip bg-color">信息采集</span>
+                            <a href="/tags/%E9%94%99%E8%AF%AF/">
+                                <span class="chip bg-color">错误</span>
                             </a>
                         
                     </div>
@@ -486,14 +478,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    2.1k
+                    57
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    13 分
+                    1 分
                 </div>
                 
 
@@ -516,98 +508,13 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>使用chromedriver进行网页抓取时同时打印日志，并获取响应状态码</p>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">package</span> <span class="token namespace">com<span class="token punctuation">.</span>wzq<span class="token punctuation">.</span>gbif</span><span class="token punctuation">;</span>
+                <p>在推送博客时出现错误如下：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">Failed to connect to github.com port 443: Timed out<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<span class="token keyword">import</span> <span class="token namespace">java<span class="token punctuation">.</span>util<span class="token punctuation">.</span></span><span class="token class-name">Iterator</span><span class="token punctuation">;</span>
-<span class="token keyword">import</span> <span class="token namespace">java<span class="token punctuation">.</span>util<span class="token punctuation">.</span>logging<span class="token punctuation">.</span></span><span class="token class-name">Level</span><span class="token punctuation">;</span>
+<p>解决办法，执行如下命令（一般是挂代理引起的）</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">git config --global --unset http.proxy<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<span class="token keyword">import</span> <span class="token namespace">org<span class="token punctuation">.</span>json<span class="token punctuation">.</span></span><span class="token class-name">JSONException</span><span class="token punctuation">;</span>
-<span class="token keyword">import</span> <span class="token namespace">org<span class="token punctuation">.</span>json<span class="token punctuation">.</span></span><span class="token class-name">JSONObject</span><span class="token punctuation">;</span>
-<span class="token keyword">import</span> <span class="token namespace">org<span class="token punctuation">.</span>openqa<span class="token punctuation">.</span>selenium<span class="token punctuation">.</span>chrome<span class="token punctuation">.</span></span><span class="token class-name">ChromeDriver</span><span class="token punctuation">;</span>
-<span class="token keyword">import</span> <span class="token namespace">org<span class="token punctuation">.</span>openqa<span class="token punctuation">.</span>selenium<span class="token punctuation">.</span>chrome<span class="token punctuation">.</span></span><span class="token class-name">ChromeOptions</span><span class="token punctuation">;</span>
-<span class="token keyword">import</span> <span class="token namespace">org<span class="token punctuation">.</span>openqa<span class="token punctuation">.</span>selenium<span class="token punctuation">.</span>logging<span class="token punctuation">.</span></span><span class="token class-name">LogEntries</span><span class="token punctuation">;</span>
-<span class="token keyword">import</span> <span class="token namespace">org<span class="token punctuation">.</span>openqa<span class="token punctuation">.</span>selenium<span class="token punctuation">.</span>logging<span class="token punctuation">.</span></span><span class="token class-name">LogEntry</span><span class="token punctuation">;</span>
-<span class="token keyword">import</span> <span class="token namespace">org<span class="token punctuation">.</span>openqa<span class="token punctuation">.</span>selenium<span class="token punctuation">.</span>logging<span class="token punctuation">.</span></span><span class="token class-name">LogType</span><span class="token punctuation">;</span>
-<span class="token keyword">import</span> <span class="token namespace">org<span class="token punctuation">.</span>openqa<span class="token punctuation">.</span>selenium<span class="token punctuation">.</span>logging<span class="token punctuation">.</span></span><span class="token class-name">LoggingPreferences</span><span class="token punctuation">;</span>
-<span class="token keyword">import</span> <span class="token namespace">org<span class="token punctuation">.</span>openqa<span class="token punctuation">.</span>selenium<span class="token punctuation">.</span>remote<span class="token punctuation">.</span></span><span class="token class-name">DesiredCapabilities</span><span class="token punctuation">;</span>
-
-<span class="token comment">/**
- * @author wang
- * @version 1.0
- * @date 2021/8/13 16:50
- */</span>
-<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Test03</span> <span class="token punctuation">{</span>
-
-    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token function">downloadPage</span><span class="token punctuation">(</span><span class="token string">"https://www.baidu.com/"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-
-    <span class="token keyword">private</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">downloadPage</span><span class="token punctuation">(</span><span class="token class-name">String</span> url<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token class-name">ChromeDriver</span> driver <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
-        <span class="token keyword">try</span> <span class="token punctuation">{</span>
-            <span class="token class-name">ChromeOptions</span> options <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ChromeOptions</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-            <span class="token class-name">DesiredCapabilities</span> cap <span class="token operator">=</span> <span class="token class-name">DesiredCapabilities</span><span class="token punctuation">.</span><span class="token function">chrome</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-            cap<span class="token punctuation">.</span><span class="token function">setCapability</span><span class="token punctuation">(</span><span class="token class-name">ChromeOptions</span><span class="token punctuation">.</span>CAPABILITY<span class="token punctuation">,</span> options<span class="token punctuation">)</span><span class="token punctuation">;</span>
-            <span class="token class-name">LoggingPreferences</span> logPrefs <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">LoggingPreferences</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-            logPrefs<span class="token punctuation">.</span><span class="token function">enable</span><span class="token punctuation">(</span><span class="token class-name">LogType</span><span class="token punctuation">.</span>PERFORMANCE<span class="token punctuation">,</span> <span class="token class-name">Level</span><span class="token punctuation">.</span>ALL<span class="token punctuation">)</span><span class="token punctuation">;</span>
-            options<span class="token punctuation">.</span><span class="token function">setCapability</span><span class="token punctuation">(</span><span class="token string">"goog:loggingPrefs"</span><span class="token punctuation">,</span> logPrefs<span class="token punctuation">)</span><span class="token punctuation">;</span>
-            driver <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ChromeDriver</span><span class="token punctuation">(</span>options<span class="token punctuation">)</span><span class="token punctuation">;</span>
-            <span class="token comment">// navigate to the page</span>
-            <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"Navigate to "</span> <span class="token operator">+</span> url<span class="token punctuation">)</span><span class="token punctuation">;</span>
-            driver<span class="token punctuation">.</span><span class="token function">navigate</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token keyword">to</span><span class="token punctuation">(</span>url<span class="token punctuation">)</span><span class="token punctuation">;</span>
-            <span class="token comment">// and capture the last recorded url (it may be a redirect, or the</span>
-            <span class="token comment">// original url)</span>
-            <span class="token class-name">String</span> currentURL <span class="token operator">=</span> driver<span class="token punctuation">.</span><span class="token function">getCurrentUrl</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-            <span class="token class-name">LogEntries</span> logs <span class="token operator">=</span> driver<span class="token punctuation">.</span><span class="token function">manage</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">logs</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">"performance"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-            <span class="token keyword">int</span> status <span class="token operator">=</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span>
-            <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"\\nList of log entries:\\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-            <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token class-name">Iterator</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">LogEntry</span><span class="token punctuation">&gt;</span></span> it <span class="token operator">=</span> logs<span class="token punctuation">.</span><span class="token function">iterator</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> it<span class="token punctuation">.</span><span class="token function">hasNext</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token punctuation">)</span> <span class="token punctuation">{</span>
-                <span class="token class-name">LogEntry</span> entry <span class="token operator">=</span> it<span class="token punctuation">.</span><span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-                <span class="token keyword">try</span> <span class="token punctuation">{</span>
-                    <span class="token class-name">JSONObject</span> json <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">JSONObject</span><span class="token punctuation">(</span>entry<span class="token punctuation">.</span><span class="token function">getMessage</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-                    <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>json<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-                    <span class="token class-name">JSONObject</span> message <span class="token operator">=</span> json<span class="token punctuation">.</span><span class="token function">getJSONObject</span><span class="token punctuation">(</span><span class="token string">"message"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-                    <span class="token class-name">String</span> method <span class="token operator">=</span> message<span class="token punctuation">.</span><span class="token function">getString</span><span class="token punctuation">(</span><span class="token string">"method"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-                    <span class="token keyword">if</span> <span class="token punctuation">(</span>method <span class="token operator">!=</span> <span class="token keyword">null</span> <span class="token operator">&amp;&amp;</span> <span class="token string">"Network.responseReceived"</span><span class="token punctuation">.</span><span class="token function">equals</span><span class="token punctuation">(</span>method<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-                        <span class="token class-name">JSONObject</span> params <span class="token operator">=</span> message<span class="token punctuation">.</span><span class="token function">getJSONObject</span><span class="token punctuation">(</span><span class="token string">"params"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-                        <span class="token class-name">JSONObject</span> response <span class="token operator">=</span> params<span class="token punctuation">.</span><span class="token function">getJSONObject</span><span class="token punctuation">(</span><span class="token string">"response"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-                        <span class="token class-name">String</span> messageUrl <span class="token operator">=</span> response<span class="token punctuation">.</span><span class="token function">getString</span><span class="token punctuation">(</span><span class="token string">"url"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-                        <span class="token keyword">if</span> <span class="token punctuation">(</span>currentURL<span class="token punctuation">.</span><span class="token function">equals</span><span class="token punctuation">(</span>messageUrl<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-                            status <span class="token operator">=</span> response<span class="token punctuation">.</span><span class="token function">getInt</span><span class="token punctuation">(</span><span class="token string">"status"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-                            <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>messageUrl <span class="token operator">+</span> <span class="token string">": "</span> <span class="token operator">+</span> status<span class="token punctuation">)</span><span class="token punctuation">;</span>
-                            <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"headers: "</span> <span class="token operator">+</span> response<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">"headers"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-                        <span class="token punctuation">}</span>
-                    <span class="token punctuation">}</span>
-                <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">JSONException</span> e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-                    <span class="token comment">// TODO Auto-generated catch block</span>
-                    e<span class="token punctuation">.</span><span class="token function">printStackTrace</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-                <span class="token punctuation">}</span>
-            <span class="token punctuation">}</span>
-            <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"\nstatus code: "</span> <span class="token operator">+</span> status<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token punctuation">}</span> <span class="token keyword">finally</span> <span class="token punctuation">{</span>
-            <span class="token keyword">if</span> <span class="token punctuation">(</span>driver <span class="token operator">!=</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-                driver<span class="token punctuation">.</span><span class="token function">quit</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-            <span class="token punctuation">}</span>
-        <span class="token punctuation">}</span>
-    <span class="token punctuation">}</span>
-
-<span class="token punctuation">}</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>日志打印信息</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">Navigate to https://www.baidu.com/
-\nList of log entries:\n
-{"webview":"4093F206401AE297E4EFF7BEE9AC3FD7","message":{"method":"Network.requestWillBeSent","params":{"request":{"headers":{"sec-ch-ua":"\" Not;A Brand\";v=\"99\", \"Google Chrome\";v=\"91\", \"Chromium\";v=\"91\"","sec-ch-ua-mobile":"?0","Upgrade-Insecure-Requests":"1","User-Agent":"Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/91.0.4472.164 Safari\/537.36"},"initialPriority":"VeryHigh","method":"GET","referrerPolicy":"strict-origin-when-cross-origin","mixedContentType":"none","url":"https:\/\/www.baidu.com\/"},"frameId":"4093F206401AE297E4EFF7BEE9AC3FD7","requestId":"40809D29EC2359F7B635837487CAB154","documentURL":"https:\/\/www.baidu.com\/","initiator":{"type":"other"},"loaderId":"40809D29EC2359F7B635837487CAB154","hasUserGesture":false,"wallTime":1.628845180167137E9,"type":"Document","timestamp":290549.890267}}}
-{"webview":"4093F206401AE297E4EFF7BEE9AC3FD7","message":{"method":"Network.requestWillBeSentExtraInfo","params":{"headers":{"Accept":"text\/html,application\/xhtml+xml,application\/xml;q=0.9,image\/avif,image\/webp,image\/apng,*\/*;q=0.8,application\/signed-exchange;v=b3;q=0.9","Connection":"keep-alive","User-Agent":"Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/91.0.4472.164 Safari\/537.36","Sec-Fetch-Dest":"document","Sec-Fetch-Site":"none","Host":"www.baidu.com","Accept-Encoding":"gzip, deflate, br","Sec-Fetch-Mode":"navigate","sec-ch-ua":"\" Not;A Brand\";v=\"99\", \"Google Chrome\";v=\"91\", \"Chromium\";v=\"91\"","sec-ch-ua-mobile":"?0","Upgrade-Insecure-Requests":"1","Sec-Fetch-User":"?1","Accept-Language":"zh-CN,zh;q=0.9"},"requestId":"40809D29EC2359F7B635837487CAB154","associatedCookies":[]}}}
-{"webview":"4093F206401AE297E4EFF7BEE9AC3FD7","message":{"method":"Network.responseReceivedExtraInfo","params":{"headers":{"Transfer-Encoding":"chunked","Server":"BWS\/1.1","X-Ua-Compatible":"IE=Edge,chrome=1","Connection":"keep-alive","P3p":"CP=\" OTI DSP COR IVA OUR IND COM \"\nCP=\" OTI DSP COR IVA OUR IND COM \"","Date":"Fri, 13 Aug 2021 08:59:41 GMT","X-Frame-Options":"sameorigin","Strict-Transport-Security":"max-age=172800","Cache-Control":"private","Bdpagetype":"1","Content-Encoding":"gzip","Traceid":"162884518124046397549622976489859333826","Set-Cookie":"BAIDUID=F1C5FC92CC8A0F4C4BCC90CD65D5F92D:FG=1; expires=Thu, 31-Dec-37 23:55:55 GMT; max-age=2147483647; path=\/; domain=.baidu.com\nBIDUPSID=F1C5FC92CC8A0F4C4BCC90CD65D5F92D; expires=Thu, 31-Dec-37 23:55:55 GMT; max-age=2147483647; path=\/; domain=.baidu.com\nPSTM=1628845181; expires=Thu, 31-Dec-37 23:55:55 GMT; max-age=2147483647; path=\/; domain=.baidu.com\nBAIDUID=F1C5FC92CC8A0F4C11A03438D50332A3:FG=1; max-age=31536000; expires=Sat, 13-Aug-22 08:59:41 GMT; domain=.baidu.com; path=\/; version=1; comment=bd\nBDSVRTM=0; path=\/\nBD_HOME=1; path=\/\nH_PS_PSSID=34334_34369_31660_34404_34004_34092_34106_34111_26350_34422_22158_34390; path=\/; domain=.baidu.com","Bdqid":"0x858bae2200003ec2","Expires":"Fri, 13 Aug 2021 08:59:20 GMT","Content-Type":"text\/html;charset=utf-8"},"resourceIPAddressSpace":"Public","blockedCookies":[],"requestId":"40809D29EC2359F7B635837487CAB154","headersText":"HTTP\/1.1 200 OK\r\nBdpagetype: 1\r\nBdqid: 0x858bae2200003ec2\r\nCache-Control: private\r\nConnection: keep-alive\r\nContent-Encoding: gzip\r\nContent-Type: text\/html;charset=utf-8\r\nDate: Fri, 13 Aug 2021 08:59:41 GMT\r\nExpires: Fri, 13 Aug 2021 08:59:20 GMT\r\nP3p: CP=\" OTI DSP COR IVA OUR IND COM \"\r\nP3p: CP=\" OTI DSP COR IVA OUR IND COM \"\r\nServer: BWS\/1.1\r\nSet-Cookie: BAIDUID=F1C5FC92CC8A0F4C4BCC90CD65D5F92D:FG=1; expires=Thu, 31-Dec-37 23:55:55 GMT; max-age=2147483647; path=\/; domain=.baidu.com\r\nSet-Cookie: BIDUPSID=F1C5FC92CC8A0F4C4BCC90CD65D5F92D; expires=Thu, 31-Dec-37 23:55:55 GMT; max-age=2147483647; path=\/; domain=.baidu.com\r\nSet-Cookie: PSTM=1628845181; expires=Thu, 31-Dec-37 23:55:55 GMT; max-age=2147483647; path=\/; domain=.baidu.com\r\nSet-Cookie: BAIDUID=F1C5FC92CC8A0F4C11A03438D50332A3:FG=1; max-age=31536000; expires=Sat, 13-Aug-22 08:59:41 GMT; domain=.baidu.com; path=\/; version=1; comment=bd\r\nSet-Cookie: BDSVRTM=0; path=\/\r\nSet-Cookie: BD_HOME=1; path=\/\r\nSet-Cookie: H_PS_PSSID=34334_34369_31660_34404_34004_34092_34106_34111_26350_34422_22158_34390; path=\/; domain=.baidu.com\r\nStrict-Transport-Security: max-age=172800\r\nTraceid: 162884518124046397549622976489859333826\r\nX-Frame-Options: sameorigin\r\nX-Ua-Compatible: IE=Edge,chrome=1\r\nTransfer-Encoding: chunked\r\n\r\n"}}}
-{"webview":"4093F206401AE297E4EFF7BEE9AC3FD7","message":{"method":"Network.responseReceived","params":{"frameId":"4093F206401AE297E4EFF7BEE9AC3FD7","requestId":"40809D29EC2359F7B635837487CAB154","response":{"headers":{"Transfer-Encoding":"chunked","Server":"BWS\/1.1","X-Ua-Compatible":"IE=Edge,chrome=1","Connection":"keep-alive","P3p":"CP=\" OTI DSP COR IVA OUR IND COM \"\nCP=\" OTI DSP COR IVA OUR IND COM \"","Date":"Fri, 13 Aug 2021 08:59:41 GMT","X-Frame-Options":"sameorigin","Strict-Transport-Security":"max-age=172800","Cache-Control":"private","Bdpagetype":"1","Content-Encoding":"gzip","Traceid":"162884518124046397549622976489859333826","Set-Cookie":"BAIDUID=F1C5FC92CC8A0F4C4BCC90CD65D5F92D:FG=1; expires=Thu, 31-Dec-37 23:55:55 GMT; max-age=2147483647; path=\/; domain=.baidu.com\nBIDUPSID=F1C5FC92CC8A0F4C4BCC90CD65D5F92D; expires=Thu, 31-Dec-37 23:55:55 GMT; max-age=2147483647; path=\/; domain=.baidu.com\nPSTM=1628845181; expires=Thu, 31-Dec-37 23:55:55 GMT; max-age=2147483647; path=\/; domain=.baidu.com\nBAIDUID=F1C5FC92CC8A0F4C11A03438D50332A3:FG=1; max-age=31536000; expires=Sat, 13-Aug-22 08:59:41 GMT; domain=.baidu.com; path=\/; version=1; comment=bd\nBDSVRTM=0; path=\/\nBD_HOME=1; path=\/\nH_PS_PSSID=34334_34369_31660_34404_34004_34092_34106_34111_26350_34422_22158_34390; path=\/; domain=.baidu.com","Bdqid":"0x858bae2200003ec2","Expires":"Fri, 13 Aug 2021 08:59:20 GMT","Content-Type":"text\/html;charset=utf-8"},"securityDetails":{"cipher":"AES_128_GCM","signedCertificateTimestampList":[{"signatureData":"3044022020FB799165EC9B8ECFAEA4A58F3917C77C43B74C4B0BF7C82166D14EBBF2245502203C60732F3D5D81D1C56FD62D8FE904302FD5F9CAE4CA687146198BB738BAF0E5","logDescription":"DigiCert Yeti2022 Log","origin":"Embedded in certificate","logId":"2245450759552456963FA12FF1F76D86E0232663ADC04B7F5DC6835C6EE20F02","hashAlgorithm":"SHA-256","signatureAlgorithm":"ECDSA","status":"Verified","timestamp":1625102165561},{"signatureData":"3045022100CE5DC2F4040EB1B7E0A017BAD439DCEF615AFBC5F73262260ABB06EA46F67FCA0220678342A813107CF16E343318AAF89E78C10CF915A658EB5784947379F9CAC82F","logDescription":"Google 'Argon2022' log","origin":"Embedded in certificate","logId":"2979BEF09E393921F056739F63A577E5BE577D9C600AF8F94D5D265C255DC784","hashAlgorithm":"SHA-256","signatureAlgorithm":"ECDSA","status":"Verified","timestamp":1625102165546},{"signatureData":"30450220792A737CF5DFCB79085EA288DABE24B5E9D69DF79091D96AFCA595956A6C437E022100BFB732A5AAF84FBC9AD388583C9E6E71F69D2FA69BDD6998ED66039092CA2291","logDescription":"Sectigo 'Sabre' CT log","origin":"Embedded in certificate","logId":"5581D4C2169036014AEA0B9B573C53F0C0E43878702508172FA3AA1D0713D30C","hashAlgorithm":"SHA-256","signatureAlgorithm":"ECDSA","status":"Verified","timestamp":1625102165579}],"protocol":"TLS 1.2","certificateId":0,"certificateTransparencyCompliance":"compliant","sanList":["baidu.com","baifubao.com","www.baidu.cn","www.baidu.com.cn","mct.y.nuomi.com","apollo.auto","dwz.cn","*.baidu.com","*.baifubao.com","*.baidustatic.com","*.bdstatic.com","*.bdimg.com","*.hao123.com","*.nuomi.com","*.chuanke.com","*.trustgo.com","*.bce.baidu.com","*.eyun.baidu.com","*.map.baidu.com","*.mbd.baidu.com","*.fanyi.baidu.com","*.baidubce.com","*.mipcdn.com","*.news.baidu.com","*.baidupcs.com","*.aipage.com","*.aipage.cn","*.bcehost.com","*.safe.baidu.com","*.im.baidu.com","*.baiducontent.com","*.dlnel.com","*.dlnel.org","*.dueros.baidu.com","*.su.baidu.com","*.91.com","*.hao123.baidu.com","*.apollo.auto","*.xueshu.baidu.com","*.bj.baidubce.com","*.gz.baidubce.com","*.smartapps.cn","*.bdtjrcv.com","*.hao222.com","*.haokan.com","*.pae.baidu.com","*.vd.bdstatic.com","*.cloud.baidu.com","click.hm.baidu.com","log.hm.baidu.com","cm.pos.baidu.com","wn.pos.baidu.com","update.pan.baidu.com"],"validFrom":1625102163,"issuer":"GlobalSign Organization Validation CA - SHA256 - G2","keyExchange":"ECDHE_RSA","keyExchangeGroup":"P-256","subjectName":"baidu.com","validTo":1659402963},"connectionReused":false,"fromPrefetchCache":false,"responseTime":1.628845180599859E12,"timing":{"workerRespondWithSettled":-1,"pushEnd":0,"workerStart":-1,"proxyEnd":220.165,"workerFetchStart":-1,"workerReady":-1,"sslEnd":407.947,"pushStart":0,"requestTime":290549.891188,"sslStart":251.523,"dnsStart":220.177,"sendEnd":408.913,"connectEnd":407.97,"connectStart":232.939,"sendStart":408.72,"dnsEnd":232.939,"receiveHeadersEnd":434.253,"proxyStart":63.005},"encodedDataLength":1277,"remotePort":443,"mimeType":"text\/html","headersText":"HTTP\/1.1 200 OK\r\nBdpagetype: 1\r\nBdqid: 0x858bae2200003ec2\r\nCache-Control: private\r\nConnection: keep-alive\r\nContent-Encoding: gzip\r\nContent-Type: text\/html;charset=utf-8\r\nDate: Fri, 13 Aug 2021 08:59:41 GMT\r\nExpires: Fri, 13 Aug 2021 08:59:20 GMT\r\nP3p: CP=\" OTI DSP COR IVA OUR IND COM \"\r\nP3p: CP=\" OTI DSP COR IVA OUR IND COM \"\r\nServer: BWS\/1.1\r\nSet-Cookie: BAIDUID=F1C5FC92CC8A0F4C4BCC90CD65D5F92D:FG=1; expires=Thu, 31-Dec-37 23:55:55 GMT; max-age=2147483647; path=\/; domain=.baidu.com\r\nSet-Cookie: BIDUPSID=F1C5FC92CC8A0F4C4BCC90CD65D5F92D; expires=Thu, 31-Dec-37 23:55:55 GMT; max-age=2147483647; path=\/; domain=.baidu.com\r\nSet-Cookie: PSTM=1628845181; expires=Thu, 31-Dec-37 23:55:55 GMT; max-age=2147483647; path=\/; domain=.baidu.com\r\nSet-Cookie: BAIDUID=F1C5FC92CC8A0F4C11A03438D50332A3:FG=1; max-age=31536000; expires=Sat, 13-Aug-22 08:59:41 GMT; domain=.baidu.com; path=\/; version=1; comment=bd\r\nSet-Cookie: BDSVRTM=0; path=\/\r\nSet-Cookie: BD_HOME=1; path=\/\r\nSet-Cookie: H_PS_PSSID=34334_34369_31660_34404_34004_34092_34106_34111_26350_34422_22158_34390; path=\/; domain=.baidu.com\r\nStrict-Transport-Security: max-age=172800\r\nTraceid: 162884518124046397549622976489859333826\r\nX-Frame-Options: sameorigin\r\nX-Ua-Compatible: IE=Edge,chrome=1\r\nTransfer-Encoding: chunked\r\n\r\n","securityState":"secure","requestHeadersText":"GET \/ HTTP\/1.1\r\nHost: www.baidu.com\r\nConnection: keep-alive\r\nsec-ch-ua: \" Not;A Brand\";v=\"99\", \"Google Chrome\";v=\"91\", \"Chromium\";v=\"91\"\r\nsec-ch-ua-mobile: ?0\r\nUpgrade-Insecure-Requests: 1\r\nUser-Agent: Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/91.0.4472.164 Safari\/537.36\r\nAccept: text\/html,application\/xhtml+xml,application\/xml;q=0.9,image\/avif,image\/webp,image\/apng,*\/*;q=0.8,application\/signed-exchange;v=b3;q=0.9\r\nSec-Fetch-Site: none\r\nSec-Fetch-Mode: navigate\r\nSec-Fetch-User: ?1\r\nSec-Fetch-Dest: document\r\nAccept-Encoding: gzip, deflate, br\r\nAccept-Language: zh-CN,zh;q=0.9\r\n","url":"https:\/\/www.baidu.com\/","protocol":"http\/1.1","fromDiskCache":false,"fromServiceWorker":false,"requestHeaders":{"Accept":"text\/html,application\/xhtml+xml,application\/xml;q=0.9,image\/avif,image\/webp,image\/apng,*\/*;q=0.8,application\/signed-exchange;v=b3;q=0.9","Connection":"keep-alive","User-Agent":"Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/91.0.4472.164 Safari\/537.36","Sec-Fetch-Dest":"document","Sec-Fetch-Site":"none","Host":"www.baidu.com","Accept-Encoding":"gzip, deflate, br","Sec-Fetch-Mode":"navigate","sec-ch-ua":"\" Not;A Brand\";v=\"99\", \"Google Chrome\";v=\"91\", \"Chromium\";v=\"91\"","sec-ch-ua-mobile":"?0","Upgrade-Insecure-Requests":"1","Sec-Fetch-User":"?1","Accept-Language":"zh-CN,zh;q=0.9"},"remoteIPAddress":"39.156.66.14","statusText":"OK","connectionId":38,"status":200},"loaderId":"40809D29EC2359F7B635837487CAB154","type":"Document","timestamp":290550.326953}}}
-https://www.baidu.com/: 200
-headers: {"Transfer-Encoding":"chunked","Server":"BWS\/1.1","X-Ua-Compatible":"IE=Edge,chrome=1","Connection":"keep-alive","P3p":"CP=\" OTI DSP COR IVA OUR IND COM \"\nCP=\" OTI DSP COR IVA OUR IND COM \"","Date":"Fri, 13 Aug 2021 08:59:41 GMT","X-Frame-Options":"sameorigin","Strict-Transport-Security":"max-age=172800","Cache-Control":"private","Bdpagetype":"1","Content-Encoding":"gzip","Traceid":"162884518124046397549622976489859333826","Set-Cookie":"BAIDUID=F1C5FC92CC8A0F4C4BCC90CD65D5F92D:FG=1; expires=Thu, 31-Dec-37 23:55:55 GMT; max-age=2147483647; path=\/; domain=.baidu.com\nBIDUPSID=F1C5FC92CC8A0F4C4BCC90CD65D5F92D; expires=Thu, 31-Dec-37 23:55:55 GMT; max-age=2147483647; path=\/; domain=.baidu.com\nPSTM=1628845181; expires=Thu, 31-Dec-37 23:55:55 GMT; max-age=2147483647; path=\/; domain=.baidu.com\nBAIDUID=F1C5FC92CC8A0F4C11A03438D50332A3:FG=1; max-age=31536000; expires=Sat, 13-Aug-22 08:59:41 GMT; domain=.baidu.com; path=\/; version=1; comment=bd\nBDSVRTM=0; path=\/\nBD_HOME=1; path=\/\nH_PS_PSSID=34334_34369_31660_34404_34004_34092_34106_34111_26350_34422_22158_34390; path=\/; domain=.baidu.com","Bdqid":"0x858bae2200003ec2","Expires":"Fri, 13 Aug 2021 08:59:20 GMT","Content-Type":"text\/html;charset=utf-8"}
-…………
-status code: 200<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
+<p>再次执行推送命令既可</p>
 
                 
             </div>
@@ -634,7 +541,7 @@ status code: 200<span aria-hidden="true" class="line-numbers-rows"><span></span>
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://wanghubcc.github.io/archives/dc2645ea.html">https://wanghubcc.github.io/archives/dc2645ea.html</a>
+                    <a href="https://wanghubcc.github.io/archives/7a191711.html">https://wanghubcc.github.io/archives/7a191711.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -676,16 +583,8 @@ status code: 200<span aria-hidden="true" class="line-numbers-rows"><span></span>
                                     <span class="chip bg-color">笔记</span>
                                 </a>
                             
-                                <a href="/tags/chromedriver/">
-                                    <span class="chip bg-color">chromedriver</span>
-                                </a>
-                            
-                                <a href="/tags/%E7%88%AC%E8%99%AB/">
-                                    <span class="chip bg-color">爬虫</span>
-                                </a>
-                            
-                                <a href="/tags/%E4%BF%A1%E6%81%AF%E9%87%87%E9%9B%86/">
-                                    <span class="chip bg-color">信息采集</span>
+                                <a href="/tags/%E9%94%99%E8%AF%AF/">
+                                    <span class="chip bg-color">错误</span>
                                 </a>
                             
                         </div>
@@ -760,9 +659,10 @@ status code: 200<span aria-hidden="true" class="line-numbers-rows"><span></span>
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/archives/7a191711.html">
                     <div class="card-image">
@@ -780,9 +680,9 @@ status code: 200<span aria-hidden="true" class="line-numbers-rows"><span></span>
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-08-13
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-08-13
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-user fa-fw"></i>
@@ -791,6 +691,7 @@ status code: 200<span aria-hidden="true" class="line-numbers-rows"><span></span>
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -810,7 +711,7 @@ status code: 200<span aria-hidden="true" class="line-numbers-rows"><span></span>
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
-                本篇&nbsp;<i class="far fa-dot-circle"></i>
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
                 <a href="/archives/dc2645ea.html">
@@ -840,7 +741,6 @@ status code: 200<span aria-hidden="true" class="line-numbers-rows"><span></span>
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     

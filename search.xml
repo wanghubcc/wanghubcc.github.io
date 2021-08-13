@@ -4,6 +4,27 @@
   
     
     <entry>
+      <title>推送博客时出现错误解决方案</title>
+      <link href="/archives/7a191711.html"/>
+      <url>/archives/7a191711.html</url>
+      
+        <content type="html"><![CDATA[<p>在推送博客时出现错误如下：</p><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">Failed to connect to github.com port 443: Timed out<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>解决办法，执行如下命令（一般是挂代理引起的）</p><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">git config --global --unset http.proxy<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>再次执行推送命令既可</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 笔记 </tag>
+            
+            <tag> 错误 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>使用chromedriver打印日志</title>
       <link href="/archives/dc2645ea.html"/>
       <url>/archives/dc2645ea.html</url>
@@ -14,9 +35,9 @@
       
         <tags>
             
-            <tag> chromedriver </tag>
-            
             <tag> 笔记 </tag>
+            
+            <tag> chromedriver </tag>
             
             <tag> 爬虫 </tag>
             
