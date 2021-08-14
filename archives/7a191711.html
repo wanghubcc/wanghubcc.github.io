@@ -516,7 +516,7 @@
 <p>再次推送</p>
 <h3 id="OpenSSL-SSL-read-Connection-was-reset-errno-10054"><a href="#OpenSSL-SSL-read-Connection-was-reset-errno-10054" class="headerlink" title="OpenSSL SSL_read: Connection was reset, errno 10054"></a>OpenSSL SSL_read: Connection was reset, errno 10054</h3><h5 id="出现错误：OpenSSL-SSL-read-Connection-was-reset-errno-10054"><a href="#出现错误：OpenSSL-SSL-read-Connection-was-reset-errno-10054" class="headerlink" title="出现错误：OpenSSL SSL_read: Connection was reset, errno 10054"></a>出现错误：OpenSSL SSL_read: Connection was reset, errno 10054</h5><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">OpenSSL SSL_read: Connection was reset, errno 10054<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<p>执行命令，接触ssl验证（每次出现错误都需要重新执行）</p>
+<p>执行命令，解除ssl验证（每次出现错误都需要重新执行）</p>
 <pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">git config --global http.sslVerify "false"<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>再次推送</p>
