@@ -17,8 +17,8 @@
 
 
     <title>推送博客时出现错误解决方案 | 莫问天涯の笔记</title>
-<!--    <link rel="icon" type="image/png" href="/favicon.png">-->
-    <link rel="icon" type="image/png" href="">
+    <link rel="icon" type="image/png" href="/favicon.png">
+<!--    <link rel="icon" type="image/png" href="">-->
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
     <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
@@ -471,14 +471,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-08-13
+                    2021-08-14
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    109
+                    126
                 </div>
                 
 
@@ -508,13 +508,13 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h5 id="在推送博客时出现错误如下：Failed-to-connect-to-github-com-port-443-Timed-out"><a href="#在推送博客时出现错误如下：Failed-to-connect-to-github-com-port-443-Timed-out" class="headerlink" title="在推送博客时出现错误如下：Failed to connect to github.com port 443: Timed out"></a>在推送博客时出现错误如下：Failed to connect to github.com port 443: Timed out</h5><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">Failed to connect to github.com port 443: Timed out<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+                <h3 id="Failed-to-connect-to-github-com-port-443-Timed-out"><a href="#Failed-to-connect-to-github-com-port-443-Timed-out" class="headerlink" title="Failed to connect to github.com port 443: Timed out"></a>Failed to connect to github.com port 443: Timed out</h3><h5 id="在推送博客时出现错误如下：Failed-to-connect-to-github-com-port-443-Timed-out"><a href="#在推送博客时出现错误如下：Failed-to-connect-to-github-com-port-443-Timed-out" class="headerlink" title="在推送博客时出现错误如下：Failed to connect to github.com port 443: Timed out"></a>在推送博客时出现错误如下：Failed to connect to github.com port 443: Timed out</h5><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">Failed to connect to github.com port 443: Timed out<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>解决办法，执行如下命令（一般是挂代理引起的）</p>
 <pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">git config --global --unset http.proxy<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>再次推送</p>
-<h5 id="出现错误：OpenSSL-SSL-read-Connection-was-reset-errno-10054"><a href="#出现错误：OpenSSL-SSL-read-Connection-was-reset-errno-10054" class="headerlink" title="出现错误：OpenSSL SSL_read: Connection was reset, errno 10054"></a>出现错误：OpenSSL SSL_read: Connection was reset, errno 10054</h5><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">OpenSSL SSL_read: Connection was reset, errno 10054<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h3 id="OpenSSL-SSL-read-Connection-was-reset-errno-10054"><a href="#OpenSSL-SSL-read-Connection-was-reset-errno-10054" class="headerlink" title="OpenSSL SSL_read: Connection was reset, errno 10054"></a>OpenSSL SSL_read: Connection was reset, errno 10054</h3><h5 id="出现错误：OpenSSL-SSL-read-Connection-was-reset-errno-10054"><a href="#出现错误：OpenSSL-SSL-read-Connection-was-reset-errno-10054" class="headerlink" title="出现错误：OpenSSL SSL_read: Connection was reset, errno 10054"></a>出现错误：OpenSSL SSL_read: Connection was reset, errno 10054</h5><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">OpenSSL SSL_read: Connection was reset, errno 10054<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>执行命令，接触ssl验证（每次出现错误都需要重新执行）</p>
 <pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">git config --global http.sslVerify "false"<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
@@ -996,7 +996,7 @@
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">2.2k</span>&nbsp;字
+                        class="white-color">638</span>&nbsp;字
             
             
             
