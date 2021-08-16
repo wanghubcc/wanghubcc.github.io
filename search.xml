@@ -4,6 +4,50 @@
   
     
     <entry>
+      <title>docker安装mysql</title>
+      <link href="/archives/25ae9841.html"/>
+      <url>/archives/25ae9841.html</url>
+      
+        <content type="html"><![CDATA[<h1 id="docker安装mysql"><a href="#docker安装mysql" class="headerlink" title="docker安装mysql"></a>docker安装mysql</h1><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">#拉取镜像docker pull mysql:5.7# --name指定容器名字 -v目录挂载 -p指定端口映射  -e设置mysql参数 -d后台运行 -m限制内存使用docker run -p 3306:3306 --name mysql \-v /mydata/mysql/log:/var/log/mysql \-v /mydata/mysql/data:/var/lib/mysql \-v /mydata/mysql/conf:/etc/mysql \-m 200m \-e MYSQL_ROOT_PASSWORD=123456 \-d mysql:5.7#修改配置文件vi /mydata/mysql/conf/my.conf [client]default-character-set=utf8[mysql]default-character-set=utf8[mysqld]init_connect='SET collation_connection = utf8_unicode_ci'init_connect='SET NAMES utf8'character-set-server=utf8collation-server=utf8_unicode_ciskip-character-set-client-handshakeskip-name-resolve#重启服务docker restart mysql#设置容器开机自启docker update mysql --restart=always<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 笔记 </tag>
+            
+            <tag> docker </tag>
+            
+            <tag> mysql </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>docker安装</title>
+      <link href="/archives/327177db.html"/>
+      <url>/archives/327177db.html</url>
+      
+        <content type="html"><![CDATA[<h1 id="centos7安装docker"><a href="#centos7安装docker" class="headerlink" title="centos7安装docker"></a>centos7安装docker</h1><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">#卸载系统之前的docker sudo yum remove docker \                  docker-client \                  docker-client-latest \                  docker-common \                  docker-latest \                  docker-latest-logrotate \                  docker-logrotate \                  docker-engine                  sudo yum install -y yum-utils# 配置镜像sudo yum-config-manager \    --add-repo \    https://download.docker.com/linux/centos/docker-ce.repo#安装docker    sudo yum install docker-ce docker-ce-cli containerd.io#启动docker服务sudo systemctl start docker #查看版本，是否安装成功docker -v#配置镜像加速sudo mkdir -p /etc/dockersudo tee /etc/docker/daemon.json &lt;&lt;-'EOF'{  "registry-mirrors": ["https://g2i6jdnj.mirror.aliyuncs.com"]}EOF#重启服务sudo systemctl daemon-reloadsudo systemctl restart docker<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 笔记 </tag>
+            
+            <tag> docker </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>postman打开时瞬间黑屏1s</title>
       <link href="/archives/8faf8cb1.html"/>
       <url>/archives/8faf8cb1.html</url>

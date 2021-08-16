@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://blog.wanghub.cc/archives/25ae9841.html</loc>
+    
+    <lastmod>2021-08-16</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.wanghub.cc/archives/327177db.html</loc>
+    
+    <lastmod>2021-08-16</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://blog.wanghub.cc/archives/8faf8cb1.html</loc>
     
     <lastmod>2021-08-16</lastmod>
@@ -103,6 +117,20 @@
   
   <url>
     <loc>https://blog.wanghub.cc/tags/%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/</loc>
+    <lastmod>2021-08-16</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.wanghub.cc/tags/docker/</loc>
+    <lastmod>2021-08-16</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.wanghub.cc/tags/mysql/</loc>
     <lastmod>2021-08-16</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
