@@ -4,6 +4,29 @@
   
     
     <entry>
+      <title>docker安装zookeeper</title>
+      <link href="/archives/9b20e9d.html"/>
+      <url>/archives/9b20e9d.html</url>
+      
+        <content type="html"><![CDATA[<h1 id="docker安装zookeeper"><a href="#docker安装zookeeper" class="headerlink" title="docker安装zookeeper"></a>docker安装zookeeper</h1><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">#拉取镜像docker pull zookeeper#创建挂载文件夹mkdir -p /opt/zook#启动容器docker run -d -v /opt/zook:/data -v /opt/zook:/datalog  -e ZOO_MY_ID=1 -e ZOO_SERVERS='server.1=172.110.110.101:2888:3888'  --net=host --name zookeeper --privileged zookeeper#设置容器开机自启docker update zookeeper --restart=always<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 笔记 </tag>
+            
+            <tag> docker </tag>
+            
+            <tag> zookeeper </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>docker安装mysql</title>
       <link href="/archives/25ae9841.html"/>
       <url>/archives/25ae9841.html</url>
@@ -102,9 +125,9 @@
       
         <tags>
             
-            <tag> chromedriver </tag>
-            
             <tag> 笔记 </tag>
+            
+            <tag> chromedriver </tag>
             
             <tag> 爬虫 </tag>
             
