@@ -2,9 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://blog.wanghub.cc/archives/8faf8cb1.html</loc>
+    
+    <lastmod>2021-08-16</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://blog.wanghub.cc/archives/7a191711.html</loc>
     
-    <lastmod>2021-08-14</lastmod>
+    <lastmod>2021-08-16</lastmod>
     
   </url>
   
@@ -60,43 +67,50 @@
 
   <url>
     <loc>https://blog.wanghub.cc/</loc>
-    <lastmod>2021-08-14</lastmod>
+    <lastmod>2021-08-16</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
 
   
   <url>
-    <loc>https://blog.wanghub.cc/tags/%E7%AC%94%E8%AE%B0/</loc>
-    <lastmod>2021-08-14</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.wanghub.cc/tags/%E9%94%99%E8%AF%AF/</loc>
-    <lastmod>2021-08-14</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://blog.wanghub.cc/tags/chromedriver/</loc>
-    <lastmod>2021-08-14</lastmod>
+    <lastmod>2021-08-16</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.wanghub.cc/tags/%E7%AC%94%E8%AE%B0/</loc>
+    <lastmod>2021-08-16</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://blog.wanghub.cc/tags/%E7%88%AC%E8%99%AB/</loc>
-    <lastmod>2021-08-14</lastmod>
+    <lastmod>2021-08-16</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://blog.wanghub.cc/tags/%E4%BF%A1%E6%81%AF%E9%87%87%E9%9B%86/</loc>
-    <lastmod>2021-08-14</lastmod>
+    <lastmod>2021-08-16</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.wanghub.cc/tags/%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/</loc>
+    <lastmod>2021-08-16</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.wanghub.cc/tags/postman/</loc>
+    <lastmod>2021-08-16</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>

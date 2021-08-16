@@ -4,6 +4,29 @@
   
     
     <entry>
+      <title>postman打开时瞬间黑屏1s</title>
+      <link href="/archives/8faf8cb1.html"/>
+      <url>/archives/8faf8cb1.html</url>
+      
+        <content type="html"><![CDATA[<h1 id="postman打开时瞬间黑屏1s解决方案"><a href="#postman打开时瞬间黑屏1s解决方案" class="headerlink" title="postman打开时瞬间黑屏1s解决方案"></a>postman打开时瞬间黑屏1s解决方案</h1><ul><li><p>在环境变量中加入POSTMAN_DISABLE_GPU = true</p></li><li><p>重新打开postman</p></li></ul><p><img src="https://cdn.jsdelivr.net/gh/wanghubcc/img/202108/16/23df65c69822793fa2750acd40308c.png" alt="Snipaste_2021-08-16_12-31-44"></p><p><img src="https://cdn.jsdelivr.net/gh/wanghubcc/img/202108/16/81c7db49cace5ed587ccba20262a9e.png" alt="image-20210816123313005"></p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 笔记 </tag>
+            
+            <tag> 解决方案 </tag>
+            
+            <tag> postman </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>推送博客时出现错误解决方案</title>
       <link href="/archives/7a191711.html"/>
       <url>/archives/7a191711.html</url>
@@ -16,7 +39,7 @@
             
             <tag> 笔记 </tag>
             
-            <tag> 错误 </tag>
+            <tag> 解决方案 </tag>
             
         </tags>
       
@@ -35,9 +58,9 @@
       
         <tags>
             
-            <tag> 笔记 </tag>
-            
             <tag> chromedriver </tag>
+            
+            <tag> 笔记 </tag>
             
             <tag> 爬虫 </tag>
             
