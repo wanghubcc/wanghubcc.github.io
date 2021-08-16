@@ -8,7 +8,7 @@
       <link href="/archives/7c4d3618.html"/>
       <url>/archives/7c4d3618.html</url>
       
-        <content type="html"><![CDATA[<h1 id="docker安装postgres"><a href="#docker安装postgres" class="headerlink" title="docker安装postgres"></a>docker安装postgres</h1><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">#拉取镜像docker pull postgres#启动docker run --name some-postgres -e POSTGRES_PASSWORD=123456 -d postgres<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>]]></content>
+        <content type="html"><![CDATA[<h1 id="docker安装postgres"><a href="#docker安装postgres" class="headerlink" title="docker安装postgres"></a>docker安装postgres</h1><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">#拉取镜像docker pull postgres#启动docker run --name some-postgres -e POSTGRES_PASSWORD=123456 -p 5432:5432 -d postgres<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>]]></content>
       
       
       
