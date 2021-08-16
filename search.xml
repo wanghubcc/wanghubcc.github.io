@@ -4,6 +4,29 @@
   
     
     <entry>
+      <title>docker安装postgres</title>
+      <link href="/archives/7c4d3618.html"/>
+      <url>/archives/7c4d3618.html</url>
+      
+        <content type="html"><![CDATA[<h1 id="docker安装postgres"><a href="#docker安装postgres" class="headerlink" title="docker安装postgres"></a>docker安装postgres</h1><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">#拉取镜像docker pull postgres#启动docker run --name some-postgres -e POSTGRES_PASSWORD=123456 -d postgres<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 笔记 </tag>
+            
+            <tag> docker </tag>
+            
+            <tag> postgres </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>docker安装zookeeper</title>
       <link href="/archives/9b20e9d.html"/>
       <url>/archives/9b20e9d.html</url>
@@ -125,9 +148,9 @@
       
         <tags>
             
-            <tag> 笔记 </tag>
-            
             <tag> chromedriver </tag>
+            
+            <tag> 笔记 </tag>
             
             <tag> 爬虫 </tag>
             
