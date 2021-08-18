@@ -4,6 +4,27 @@
   
     
     <entry>
+      <title>centos断网环境下安装chrome</title>
+      <link href="/archives/3318b66c.html"/>
+      <url>/archives/3318b66c.html</url>
+      
+        <content type="html"><![CDATA[<h1 id="centos断网环境下安装chrome"><a href="#centos断网环境下安装chrome" class="headerlink" title="centos断网环境下安装chrome"></a>centos断网环境下安装chrome</h1><h2 id="离线缓存所有依赖包"><a href="#离线缓存所有依赖包" class="headerlink" title="离线缓存所有依赖包"></a>离线缓存所有依赖包</h2><h3 id="修改yum设置，让rpm包缓存到本地"><a href="#修改yum设置，让rpm包缓存到本地" class="headerlink" title="修改yum设置，让rpm包缓存到本地"></a>修改yum设置，让rpm包缓存到本地</h3><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">#修改yum设置，让rpm包缓存到本地vi /etc/yum.conf#修改keepcache为1keepcache=1#清空yum缓存yum clean all<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><h3 id="安装chrome"><a href="#安装chrome" class="headerlink" title="安装chrome"></a>安装chrome</h3><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">#写入源vi /etc/yum.repos.d/google-chrome.repo[google-chrome]name=google-chromebaseurl=http://dl.google.com/linux/chrome/rpm/stable/x86_64enabled=1gpgcheck=1gpgkey=https://dl.google.com/linux/linux_signing_key.pub#安装yum -y install google-chrome-stable --nogpgcheck<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p><img src="https://cdn.jsdelivr.net/gh/wanghubcc/img/202108/18/ddf921379399625b9342863230cbbc.png" alt="安装成功提示"></p><h3 id="复制缓存的依赖包"><a href="#复制缓存的依赖包" class="headerlink" title="复制缓存的依赖包"></a>复制缓存的依赖包</h3><p><img src="https://cdn.jsdelivr.net/gh/wanghubcc/img/202108/18/ac230e5be8d7a22f150ddb98704e9c.png" alt="缓存依赖包位置"><br><img src="https://cdn.jsdelivr.net/gh/wanghubcc/img/202108/18/511b04931124416801a69743c48562.png" alt="全部打包"></p><h2 id="把所有的依赖包上传至断网机器"><a href="#把所有的依赖包上传至断网机器" class="headerlink" title="把所有的依赖包上传至断网机器"></a>把所有的依赖包上传至断网机器</h2><h3 id="切换到依赖包目录下"><a href="#切换到依赖包目录下" class="headerlink" title="切换到依赖包目录下"></a>切换到依赖包目录下</h3><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">#强制安装所有依赖rpm -ivh *.rpm --nodeps --force<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre><p>联网的机器安装成功，这里就没问题</p><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">#验证[root@node4 packages]# google-chrome -versionGoogle Chrome 92.0.4515.131 [root@node4 packages]# <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> chrome </tag>
+            
+            <tag> 笔记 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>常用正则表达式整理</title>
       <link href="/archives/70d9e353.html"/>
       <url>/archives/70d9e353.html</url>
@@ -169,9 +190,9 @@
       
         <tags>
             
-            <tag> 笔记 </tag>
+            <tag> chrome </tag>
             
-            <tag> chromedriver </tag>
+            <tag> 笔记 </tag>
             
             <tag> 爬虫 </tag>
             

@@ -6,7 +6,7 @@
   <link href="https://blog.wanghub.cc/atom.xml" rel="self"/>
   
   <link href="https://blog.wanghub.cc/"/>
-  <updated>2021-08-16T09:40:20.449Z</updated>
+  <updated>2021-08-18T02:34:51.889Z</updated>
   <id>https://blog.wanghub.cc/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>centos断网环境下安装chrome</title>
+    <link href="https://blog.wanghub.cc/archives/3318b66c.html"/>
+    <id>https://blog.wanghub.cc/archives/3318b66c.html</id>
+    <published>2021-08-18T02:02:35.000Z</published>
+    <updated>2021-08-18T02:34:51.889Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;centos断网环境下安装chrome&quot;&gt;&lt;a href=&quot;#centos断网环境下安装chrome&quot; class=&quot;headerlink&quot; title=&quot;centos断网环境下安装chrome&quot;&gt;&lt;/a&gt;centos断网环境下安装chrome&lt;/h1&gt;&lt;h2</summary>
+        
+      
+    
+    
+    
+    
+    <category term="chrome" scheme="https://blog.wanghub.cc/tags/chrome/"/>
+    
+    <category term="笔记" scheme="https://blog.wanghub.cc/tags/%E7%AC%94%E8%AE%B0/"/>
+    
+  </entry>
   
   <entry>
     <title>常用正则表达式整理</title>
@@ -204,7 +229,7 @@
     <link href="https://blog.wanghub.cc/archives/dc2645ea.html"/>
     <id>https://blog.wanghub.cc/archives/dc2645ea.html</id>
     <published>2021-08-13T08:36:00.000Z</published>
-    <updated>2021-08-14T04:53:09.666Z</updated>
+    <updated>2021-08-18T02:03:55.975Z</updated>
     
     
       
@@ -218,9 +243,9 @@
     
     
     
-    <category term="笔记" scheme="https://blog.wanghub.cc/tags/%E7%AC%94%E8%AE%B0/"/>
+    <category term="chrome" scheme="https://blog.wanghub.cc/tags/chrome/"/>
     
-    <category term="chromedriver" scheme="https://blog.wanghub.cc/tags/chromedriver/"/>
+    <category term="笔记" scheme="https://blog.wanghub.cc/tags/%E7%AC%94%E8%AE%B0/"/>
     
     <category term="爬虫" scheme="https://blog.wanghub.cc/tags/%E7%88%AC%E8%99%AB/"/>
     
