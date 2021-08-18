@@ -4,6 +4,29 @@
   
     
     <entry>
+      <title>centos做代理中转</title>
+      <link href="/archives/f8ebd115.html"/>
+      <url>/archives/f8ebd115.html</url>
+      
+        <content type="html"><![CDATA[<h1 id="centos做代理中转"><a href="#centos做代理中转" class="headerlink" title="centos做代理中转"></a>centos做代理中转</h1><p>使用 <a href="https://github.com/nadoo/glider">glider</a> 做代理中转，可以把有账号密码的代理转为没有账号密码的代理</p><blockquote><p>glider 是一个支持多种协议的转发代理，也是一个具有 ipset 管理功能（如 dnsmasq）的 dns/dhcp 服务器 <br>我们可以将本地侦听器设置为代理服务器，并通过转发器将请求转发到互联网。</p></blockquote><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">             |Forwarder -----------------&gt;|Listener --&gt; |                            | Internet             |Forwarder --&gt; Forwarder-&gt;...|<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre><p>解压直接使用，并对外暴露服务端口</p><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">#运行程序[root@node4 glider_0.13.2_linux_amd64]# ./glider -forward http://账号:密码@http-dyn.abuyun.com:9020   --listen :11000 -verbose2021/04/27 09:27:44 group.go:182: [group] only 1 forwarder found, disable health checking2021/04/27 09:27:44 mixed.go:68: [mixed] listening TCP on :80812021/04/27 09:27:44 server.go:105: [socks5] listening UDP on :8081#应用请求结果：2021/04/27 09:31:47 server.go:162: [http] 172.110.110.1:26447 &lt;-&gt; ip.3322.net:80 via http-dyn.abuyun.com:90202021/04/27 09:31:48 server.go:162: [http] 172.110.110.1:26448 &lt;-&gt; ip.3322.net:80 via http-dyn.abuyun.com:90202021/04/27 09:31:49 server.go:162: [http] 172.110.110.1:26459 &lt;-&gt; ip.3322.net:80 via http-dyn.abuyun.com:90202021/04/27 09:31:49 server.go:162: [http] 172.110.110.1:26460 &lt;-&gt; ip.3322.net:80 via http-dyn.abuyun.com:90202021/04/27 09:31:50 server.go:162: [http] 172.110.110.1:26465 &lt;-&gt; ip.3322.net:80 via http-dyn.abuyun.com:90202021/04/27 09:31:51 server.go:162: [http] 172.110.110.1:26466 &lt;-&gt; ip.3322.net:80 via http-dyn.abuyun.com:90202021/04/27 09:33:32 server.go:162: [http] 172.110.110.1:26574 &lt;-&gt; ip.3322.net:80 via http-dyn.abuyun.com:90202021/04/27 09:33:34 server.go:162: [http] 172.110.110.1:26579 &lt;-&gt; ip.3322.net:80 via http-dyn.abuyun.com:90202021/04/27 09:33:35 server.go:162: [http] 172.110.110.1:26582 &lt;-&gt; ip.3322.net:80 via http-dyn.abuyun.com:9020<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 代理 </tag>
+            
+            <tag> 代理转发 </tag>
+            
+            <tag> centos </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>centos断网环境下安装chrome</title>
       <link href="/archives/3318b66c.html"/>
       <url>/archives/3318b66c.html</url>

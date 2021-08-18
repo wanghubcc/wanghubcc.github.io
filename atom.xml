@@ -6,7 +6,7 @@
   <link href="https://blog.wanghub.cc/atom.xml" rel="self"/>
   
   <link href="https://blog.wanghub.cc/"/>
-  <updated>2021-08-18T10:07:24.235Z</updated>
+  <updated>2021-08-18T10:25:21.253Z</updated>
   <id>https://blog.wanghub.cc/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>centos做代理中转</title>
+    <link href="https://blog.wanghub.cc/archives/f8ebd115.html"/>
+    <id>https://blog.wanghub.cc/archives/f8ebd115.html</id>
+    <published>2021-08-18T10:18:15.000Z</published>
+    <updated>2021-08-18T10:25:21.253Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;centos做代理中转&quot;&gt;&lt;a href=&quot;#centos做代理中转&quot; class=&quot;headerlink&quot; title=&quot;centos做代理中转&quot;&gt;&lt;/a&gt;centos做代理中转&lt;/h1&gt;&lt;p&gt;使用 &lt;a</summary>
+        
+      
+    
+    
+    
+    
+    <category term="代理" scheme="https://blog.wanghub.cc/tags/%E4%BB%A3%E7%90%86/"/>
+    
+    <category term="代理转发" scheme="https://blog.wanghub.cc/tags/%E4%BB%A3%E7%90%86%E8%BD%AC%E5%8F%91/"/>
+    
+    <category term="centos" scheme="https://blog.wanghub.cc/tags/centos/"/>
+    
+  </entry>
   
   <entry>
     <title>centos断网环境下安装chrome</title>
